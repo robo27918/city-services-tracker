@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  issue-type: MyString
+  location: MyString
+  description: MyString
+  created-on: 2025-09-27 22:53:00
+
+two:
+  issue-type: MyString
+  location: MyString
+  description: MyString
+  created-on: 2025-09-27 22:53:00
