@@ -1,0 +1,30 @@
+<%= form_with(model:issue, local:true) do |form|%>
+    <% if issue.errors.any? %>
+    <div class="alert alert-danger">
+        <h4>
+            <%= pluralize(issue.errors.count,"error")%> prohibited this issue from being saved
+        </h4>
+        <ul>
+            <%= issue.errors.full_messages.each do |msg|%>
+            <li>
+                <%=msg%>
+            </li>
+            <%end%>
+        </ul>
+    </div>
+<%end%>
+
+<div class="mb-3">
+    <%= form.label :description, class: "form-label"%>
+    <%= form.text_area :description, class: "form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :status, class: "form-label"%>
+    <%=form.select :status, ["open", "in_progress","resolved"], {}, class:"form-select"%>
+</div>
+
+<div class="actions">
+    <%= form.submit class:"btn btn-primary"%>
+</div>
+<%end%>

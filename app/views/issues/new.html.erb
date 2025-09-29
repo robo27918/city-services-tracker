@@ -1,2 +1,16 @@
-<h1>Issues#new</h1>
-<p>Find me in app/views/issues/new.html.erb</p>
+<h1 class="text-center">Create new issue</h1>
+<%# <div class="text-center 
+            justify-content-center 
+            align-items-center 
+            border
+            border-4
+            rounded-2
+            mt-5
+            "> %>
+        <div>
+            <%= render "form", issue: @issue%>
+            <%= link_to "Back", issues_path, class: "btn btn-primary"%>
+        </div>
+
+
+<%# </div> %>
