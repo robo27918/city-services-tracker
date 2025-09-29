@@ -1,2 +1,20 @@
-<h1>Issues#show</h1>
-<p>Find me in app/views/issues/show.html.erb</p>
+<h1 class="text-center mt-3">Item view</h1>
+<div 
+    class="text-center 
+            justify-content-center 
+            align-items-center 
+            border
+            border-4
+            rounded-2
+            mt-5
+            ">
+    <p><%=@issue.description%></p>
+    <p>Status : <%=@issue.status%></p>
+    <p>Issue type: <%=@issue.issue_type%></p>
+    <p>Reported by : <%=@issue.user.name%></p>
+    <p>Reported on : <%=@issue.created_at%></p>
+
+    <%=link_to "Edit", edit_issue_path(@issue)%>
+    <%=link_to "Back", issues_path%>
+
+</div>
