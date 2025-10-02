@@ -44,6 +44,7 @@ class IssuesController < ApplicationController
   end
   
   def issue_params
+    
     #the parameters that must be provided to create the Issue
     params.require(:issue).permit(:description, :status, :issue_type, :user_id,)
   end

@@ -15,6 +15,8 @@
     <p>Reported on : <%=@issue.created_at%></p>
 
     <%=link_to "Edit", edit_issue_path(@issue)%>
-    <%=link_to "Back", issues_path%>
+    <%=link_to "Back", issues_path%>\
+    <%= button_to "Delete", issue_path(@issue), method: :delete,
+        data: {turbo_confirm: "Are you sure?"}%>
 
 </div>

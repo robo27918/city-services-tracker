@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  resources :users
+  # resources :users
+  # get "user/index"
+  # get "user/show"
+  # get "user/new"
+  # get "user/edit"
   resources :issues
-  get "issues/index"
-  get "issues/show"
-  get "issues/new"
-  get "issues/edit"
+  # get "issues/index"
+  # get "issues/show"
+  # get "issues/new"
+  # get "issues/edit"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
