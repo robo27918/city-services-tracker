@@ -23,7 +23,10 @@ class UsersController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+  
   def destroy
+    @user.destroy
+    redirect_to users_path,notice: "User deleted successfully"
   end
 
   private

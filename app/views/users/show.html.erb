@@ -1,2 +1,22 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<h1 class="text-center mt-3">User view</h1>
+<div 
+    class="text-center 
+            justify-content-center 
+            align-items-center 
+            border
+            border-4
+            rounded-2
+            mt-5
+            ">
+    <p><%=@user.name%></p>
+    <p><%=@user.id%></p>
+    <p><%=@user.email%></p>
+    <p><%=@user.phone%></p>
+ 
+
+    <%=link_to "Edit", edit_user_path(@user)%>
+    <%=link_to "Back", users_path%>\
+    <%= button_to "Delete", user_path(@user), method: :delete,
+        data: {turbo_confirm: "Are you sure?"}%>
+
+</div>
