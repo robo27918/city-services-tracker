@@ -21,7 +21,19 @@
 
 <div class="mb-3">
     <%=form.label :status, class: "form-label"%>
-    <%=form.select :status, ["open", "in_progress","resolved"], {}, class:"form-select"%>
+    <%=form.select :status, ["open", "in progress","resolved"], {}, class:"form-select"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :User, class: "form-label"%>
+    <%=form.collection_select :user_id, User.all, :id, :name,
+    {prompt: "Select a user"},
+    {class: 'form-control'}%>
+</div>
+
+<div class="mb-3">
+    <%= form.label :issue_type, class: "form-label"%>
+    <%= form.text_area :issue_type, class: "form-control"%>
 </div>
 
 <div class="actions">

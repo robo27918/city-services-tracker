@@ -19,7 +19,8 @@ class IssuesController < ApplicationController
     if @issue.save
       redirect_to @issue, notice:"Issue created successfully!"
     else
-      render :new
+      puts @issue.errors.full_messages
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -43,7 +44,8 @@ class IssuesController < ApplicationController
   end
   
   def issue_params
-    params.require(:issue).permit(:description, :status, :issue_type, :user_id)
+    #the parameters that must be provided to create the Issue
+    params.require(:issue).permit(:description, :status, :issue_type, :user_id,)
   end
 
 end
