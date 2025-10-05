@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'issues#index'
   resources :users
   # resources :users
   # get "user/index"
