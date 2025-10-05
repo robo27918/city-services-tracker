@@ -28,10 +28,12 @@
     </table>
    
  
+     <div class="d-flex gap-3 mt-6 p-4 justify-content-center">
+        <%=link_to "Edit", edit_user_path(@user), class:"btn btn-primary"%>
+        <%=link_to "Back", users_path, class: "btn btn-primary"%>
+        <%= button_to "Delete", user_path(@user), class:"btn btn-primary" ,method: :delete,
+                data: {turbo_confirm: "Are you sure?"}%>
 
-    <%=link_to "Edit", edit_user_path(@user)%>
-    <%=link_to "Back", users_path%>\
-    <%= button_to "Delete", user_path(@user), method: :delete,
-        data: {turbo_confirm: "Are you sure?"}%>
-
+     </div>
+     
 </div>
