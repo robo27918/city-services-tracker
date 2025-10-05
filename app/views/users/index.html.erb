@@ -6,6 +6,7 @@
     <th>ID</th>
     <th>email</th>
     <th>phone number</th>
+    <th>Actions</th>
   </tr>
 
   <% @users.each do |user| %>
@@ -27,4 +28,4 @@
   <% end %>
 </table>
 
-<%= link_to "New User", new_user_path %>
+<%= link_to "New User", new_user_path, class:"btn btn-primary"%>
