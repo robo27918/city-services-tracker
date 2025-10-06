@@ -1,7 +1,8 @@
 class IssuesController < ApplicationController
   before_action :set_issue , only: %i[show edit update destroy]
   def index
-    @issues = Issue.all # an array of ActiveRecord:: Relation, each element is an issue object
+    @issues = Issue.all # an array of ActiveRecord:: Relation, 
+                        #each element is an issue object
   end
 
   def show

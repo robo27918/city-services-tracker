@@ -1,2 +1,29 @@
-<h1>Facility#index</h1>
-<p>Find me in app/views/facility/index.html.erb</p>
+<h1 class="text-center">All Facilites</h1>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Category</th>
+        <th>Operating hours</th>
+        <th>phone_contact</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+
+    <%@facilities.each do |fac| %>
+        <tr>
+            <td><%=fac.name%></td>
+            <td><%=fac.address%></td>
+            <td><%=fac.category%></td>
+            <td><%=fac.operating_hours%></td>
+            <td><%=fac.phone_contact%></td>
+            <td><img src=<%=fac.image_url%> alt="" style="width:250px; height:150px;"></td>
+            <td>
+                <%=link_to "Show", facility_path(fac)%>|
+                <%=link_to"Edit",edit_facility_path(fac)%>|
+                <%=link_to "Delete",facility_path(fac), method: :delete, data: {confirm: "Are you sure?"}%>
+            </td>
+
+        </tr>   
+    <%end%>
+</table>
