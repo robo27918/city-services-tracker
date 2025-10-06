@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_06_182433) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_06_225343) do
   create_table "facilities", force: :cascade do |t|
     t.string "name"
     t.datetime "founded"
@@ -39,6 +39,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_06_182433) do
     t.index ["user_id"], name: "index_issues_on_user_id"
   end
 
+  create_table "reservable_spaces", force: :cascade do |t|
+    t.integer "facility_id", null: false
+    t.string "name"
+    t.integer "capacity"
+    t.decimal "hourly_rate"
+    t.text "description"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["facility_id"], name: "index_reservable_spaces_on_facility_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -48,4 +60,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_06_182433) do
   end
 
   add_foreign_key "issues", "users"
+  add_foreign_key "reservable_spaces", "facilities"
 end

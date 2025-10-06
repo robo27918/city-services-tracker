@@ -1,2 +1,36 @@
-<h1>Facility#show</h1>
-<p>Find me in app/views/facility/show.html.erb</p>
+<h1 class="text-center mt-3">Facility view</h1>
+<div>
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Founded</th>
+            <th>Address</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Hours of Operation</th>
+            <th>Rules</th>
+            <th>Is Reservable</th>
+            <th>Capacity</th>
+            <th>Phone </th>
+            
+        </tr>
+        <tr>
+            <td><%=@facility.id%></td>
+            <td><%=@facility.name%></td>
+            <td><%=@facility.founded%></td>
+            <td><%=@facility.address%></td>
+            <td><%=@facility.category%></td>
+            <td><%=@facility.status%></td>
+            <td><%=@facility.operating_hours%></td>
+            <td><%=@facility.rules%></td>
+            <td><%=@facility.is_reservable%></td>
+            <td><%=@facility.capacity%></td>
+            <td><%=@facility.phone_contact%></td>
+            
+        </tr>
+    </table>
+    <div class="d-flex justify-content-center mt-5 mb-5">
+        <img class="rounded img-fluid" src="<%=@facility.image_url%>" alt="">
+    </div>
+</div>

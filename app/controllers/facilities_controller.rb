@@ -1,4 +1,5 @@
 class FacilitiesController < ApplicationController
+  before_action :set_facility, only: %i[show edit destroy]
   def index
     @facilities = Facility.all
   end
@@ -8,6 +9,8 @@ class FacilitiesController < ApplicationController
 
   def new
     @facility = Facility.new
+  end
+  def destroy
   end
   
   def create
@@ -24,7 +27,9 @@ class FacilitiesController < ApplicationController
   end
 
   private
-
+  def set_facility
+    @facility=Facility.find(params[:id])
+  end
   def facility_params
     params.require(:facility).permit(:name,:founded,:address,:category,:status,:operating_hours,:rules,:is_reservable,:capacity,:phone_contact,:image_url)
   end

@@ -1,22 +1,14 @@
 Rails.application.routes.draw do
 
+
   root 'issues#index'
+  resources :reservable_spaces
   resources :users
-  # resources :users
-  # get "user/index"
-  # get "user/show"
-  # get "user/new"
-  # get "user/edit"
+  
   resources :issues
-  # get "issues/index"
-  # get "issues/show"
-  # get "issues/new"
-  # get "issues/edit"
+
   resources :facilities
-  # get "facility/index"
-  # get "facility/show"
-  # get "facility/new"
-  # get "facility/edit"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

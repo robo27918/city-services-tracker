@@ -1,0 +1,2 @@
+module ReservableSpacesHelper
+end
