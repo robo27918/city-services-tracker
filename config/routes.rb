@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get "facility/index"
+  get "facility/show"
+  get "facility/new"
+  get "facility/edit"
   root 'issues#index'
   resources :users
   # resources :users
