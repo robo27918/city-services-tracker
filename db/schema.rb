@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_28_065110) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_06_073152) do
+  create_table "facilities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "founded"
+    t.string "address"
+    t.string "type"
+    t.string "status"
+    t.string "operating_hours"
+    t.text "rules"
+    t.boolean "is_reservable"
+    t.integer "capacity"
+    t.string "phone_contact"
+    t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "issues", force: :cascade do |t|
     t.string "issue_type"
     t.string "location"

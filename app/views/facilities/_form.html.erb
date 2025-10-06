@@ -1,0 +1,81 @@
+<%= form_with(model:facility, local:true) do |form|%>
+<% if facility.errors.any?%>
+<div class="alert alert-danger">
+    <h4>
+        <%= pluralize(issue.errors.count,"error")%> prevented this facility from being created)
+
+    </h4>
+    <ul>
+        <%=facility.errors.full_messages.each do |msg|%>
+        <li>
+            <%msg%>
+        </li>
+        <%end%>
+    </ul>
+</div>
+<%end%>
+
+<div class="mb-3">
+    <%=form.label :name, class: "form-label"%>
+    <%= form.text_field :name, class: "form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :founded, class: "form-label"%>
+    <%= form.text_field :founded, class: "form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :address, class: "form-label"%>
+    <%= form.text_field :address, class: "form-control"%>
+</div>
+<div class="mb-3">
+    <%=form.label :type, class: "form-label"%>
+    <%= form.text_field :type, class: "form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :status, class: "form-label"%>
+    <%= form.select :status, ["open","temporarily closed", "under maintenance","needs repair"], {}, class: "form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :operating_hours, class: "form-label"%>
+    <%= form.text_field :operating_hours, class: "form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :rules, class: "form-label"%>
+    <%= form.text_area :rules, class: "form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :is_reservable, class: "form-label"%>
+    <%= form.select :is_reservable, [true,false],{},class:"form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :capacity, class: "form-label"%>
+    <%=form.text_field :capacity, class:"form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :phone_contact,class:"form-label"%>
+    <%=form.telephone_field :phone_contact,class:"form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label:image_url, class:"form-label"%>
+    <%=form.text_field:image_url,class:"form-control"%>
+</div>
+
+<div class="mb-3">
+    <%=form.label :something_new, class:"form-label"%>
+    <%=form.text_field:something_new, class:"form-control"%>
+</div>
+
+<div class="actions d-flex justify-content-center mb-5">
+    <%=form.submit class:"btn btn-primary"%>
+</div>
+
+<%end%>
